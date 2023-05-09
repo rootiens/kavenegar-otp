@@ -43,6 +43,29 @@ func main() {
 }
 ```
 
+#### Example response
+
+```json
+{
+    "return": {
+        "status": 200,
+        "message": "تایید شد"
+    },
+    "entries": [
+     {
+        "messageid": 8792343,
+        "message": "ممنون از ثبت نام شما کد تایید عضویت  : 852596	",
+        "status": 5,
+        "statustext": "ارسال به مخابرات",
+        "sender": "10004346",
+        "receptor": "09361234567",
+        "date": 1356619709,
+        "cost": 120
+     }
+  ]
+}
+```
+
 
 
 
