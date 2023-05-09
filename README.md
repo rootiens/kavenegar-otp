@@ -19,7 +19,9 @@ go get -u github.com/rootiens/kavenegar-otp
 package main
 
 import (
-    kotp "github.com/rootiens/kavenegar-otp"
+	"fmt"
+
+	kotp "github.com/rootiens/kavenegar-otp"
 )
 
 func main() {
@@ -33,11 +35,12 @@ func main() {
         Template: "hi",
     }
 
-    if err := kotp.Send(otp); err != nil {
+    response, err := kotp.Send(otp)
+    err != nil {
         // log errors here
     }
+    fmt.Println(response)
 }
-
 ```
 
 
