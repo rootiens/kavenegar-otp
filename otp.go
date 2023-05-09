@@ -49,15 +49,15 @@ func createUrl(payload Otp) (string, error) {
 	return url, nil
 }
 
-func Send(payload Otp) error {
+func Send(payload Otp) (response, error) {
 	url, err := createUrl(payload)
 	if err != nil {
-		return err
+		return response{}, err
 	}
 
 	req, err := http.NewRequest("POST", url, nil)
 	if err != nil {
-		return err
+		return response{}, err
 	}
 	req.Header.Add("Content-Type", "application/json")
 
@@ -72,17 +72,17 @@ func Send(payload Otp) error {
 	body, err := io.ReadAll(res.Body)
 
 	if err != nil {
-		return err
+		return response{}, err
 	}
 
 	var resp response
 	if err := json.Unmarshal(body, &resp); err != nil {
-		return err
+		return response{}, err
 	}
 
 	if res.StatusCode != 200 {
-		return fmt.Errorf("StatusCode: %d. Message: %s", resp.Return.Status, resp.Return.Message)
+		return response{}, fmt.Errorf("StatusCode: %d. Message: %s", resp.Return.Status, resp.Return.Message)
 	}
 
-	return nil
+	return resp, nil
 }
