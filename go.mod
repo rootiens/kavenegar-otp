@@ -1,3 +1,3 @@
-module github.com/rootiens/kavenegar-otp
+module github.com/rootiens/kavenegarotp
 
 go 1.20
