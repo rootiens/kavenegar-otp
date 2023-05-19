@@ -8,7 +8,7 @@ Kavenegar OTP in Golang
 
 
 ```bash
-go get -u github.com/rootiens/kavenegar-otp
+go get -u github.com/rootiens/kavenegarotp
 ```
     
 
@@ -21,7 +21,7 @@ package main
 import (
 	"fmt"
 
-	kotp "github.com/rootiens/kavenegar-otp"
+	kotp "github.com/rootiens/kavenegarotp"
 )
 
 func main() {
