@@ -64,7 +64,7 @@ func Send(payload Otp) (response, error) {
 	client := &http.Client{}
 	res, err := client.Do(req)
 	if err != nil {
-		panic(err)
+		return response{}, err
 	}
 
 	defer res.Body.Close()
