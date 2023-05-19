@@ -1,4 +1,4 @@
-package main
+package kavenegarotp
 
 import (
 	"encoding/json"
